@@ -1,0 +1,7 @@
+{{ define "login/post" }}
+{{ template "header" . }}
+{{ template "body" . }}
+<p>Login Status: {{ .status }}</p>
+<a href="/secret">Secret Stuff</a> available only after logging in.
+{{ template "footer" . }}
+{{ end }}

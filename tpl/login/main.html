@@ -1,0 +1,20 @@
+{{ define "login/main" }}
+{{ template "header" . }}
+{{ template "body" . }}
+<h1 class="blue">Login Page</h1>
+<p>Test user id: abc, email: abc@example.com, password: abc
+<form method="POST">
+  <fieldset>
+    <legend>Please sign in:</legend>
+
+    <label for="login">User ID or email</label>
+    <input id="id" type="text" name="id">
+
+    <label for="passwd">Password</label>
+    <input id="passwd" type="password" name="passwd">
+
+    <button type="submit">Sign In</button>
+  </fieldset>
+</form>
+{{ template "footer" . }}
+{{ end }}

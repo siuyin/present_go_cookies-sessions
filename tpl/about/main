@@ -1,0 +1,9 @@
+{{ define "about/main" }}
+{{ template "header" . }}
+{{ template "body" . }}
+<h1>About Us</h1>
+<p>
+Exercitation Lorem laborum nisi labore nulla nulla pariatur consectetur exercitation duis ea id laborum reprehenderit. Adipisicing commodo nisi non minim sunt culpa enim. Magna incididunt velit occaecat commodo in laborum ut ut ullamco proident magna labore occaecat pariatur ullamco est adipisicing. Pariatur et occaecat dolor duis et eu anim ex. Ullamco incididunt nisi est enim fugiat deserunt sunt non labore ipsum.
+</p>
+{{ template "footer" }}
+{{ end }}

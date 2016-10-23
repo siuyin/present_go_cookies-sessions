@@ -1,0 +1,6 @@
+*.retry
+*.swp
+
+bcrypt/bcrypt
+run.sh
+*.db

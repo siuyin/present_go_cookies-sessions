@@ -1,0 +1,9 @@
+{{ define "body" }}
+<body>
+  <a href="/">Home</a>
+  <a href="/about">About Us</a>
+{{ if .sess.UserID }}{{ .sess.UserID }}: <a href="/logout">Log out</a>
+{{ else }}<a href="/login">Log in</a>
+{{ end }}
+{{ .body }}
+{{ end }}

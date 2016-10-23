@@ -1,0 +1,69 @@
+Using Cookies and Sessions
+in Go
+17 Oct 2016
+
+Loh Siu Yin
+Technology Consultant, Beyond Broadcast LLP
+siuyin@beyondbroadcast.com
+* Cookies
+
+- Set by application
+
+ func SetCookie(w ResponseWriter, cookie *Cookie)
+
+SetCookie adds a Set-Cookie header, thus it must be called before w is written to.
+
+- Sent by browser when getting a URL from a domain.
+Cookies read like this:
+
+ func r.Cookie("cookieName") // where r is *http.Request
+
+
+* Reading and Writing Cookies
+Reading a cookie from the client browser when the browser makes a request:
+.code main.go /300 OMIT/,/310 OMIT/
+
+Writing or setting cookies by the server to the client browser in response to a request.
+.code main.go /SetCookie/,/\)/
+
+* Sessions
+Sessions are maintained on the server and are set for authorized users.
+.code main.go /sS OMIT/,/sE OMIT/
+
+And stored in a session store, maintained by the server.
+.code main.go /10 OMIT/,/20 OMIT/
+
+* Session Store methods
+.code main.go /20 OMIT/,/30 OMIT/
+.code main.go /40 OMIT/,/50 OMIT/
+.code main.go /60 OMIT/,/70 OMIT/
+.code main.go /80 OMIT/,/90 OMIT/
+.code main.go /100 OMIT/,/110 OMIT/
+
+* Using sessions
+.code main.go /120 OMIT/,/130 OMIT/
+
+* Authentication and Authorization
+User authentication (who you are) and authorization (what you are allowed to do).
+.code main.go /140 OMIT/,/150 OMIT/
+We should _never_ store passwords in cleartext. A good password hash is bcrypt.
+
+A user database stores the user records:
+.code main.go /160 OMIT/,/170 OMIT/
+
+* UserDB methods
+.code main.go /180 OMIT/,/190 OMIT/
+.code main.go /200 OMIT/,/210 OMIT/
+.code main.go /220 OMIT/,/230 OMIT/
+.code main.go /240 OMIT/,/250 OMIT/
+.code main.go /246 OMIT/,/248 OMIT/
+.code main.go /260 OMIT/,/270 OMIT/
+
+* Usage
+.play -edit -numbers main.go /280 OMIT/,/290 OMIT/
+
+* Login page
+.play -edit -numbers main.go /340 OMIT/,/350 OMIT/
+
+* About page - does not require authentication.
+.play -edit -numbers main.go /360 OMIT/,/370 OMIT/
