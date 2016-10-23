@@ -26,6 +26,11 @@ Reading a cookie from the client browser when the browser makes a request:
 Writing or setting cookies by the server to the client browser in response to a request.
 .code main.go /SetCookie/,/\)/
 
+* Disclaimer
+* Just typing in the code snippets will not work.
+Please download the source files (main.go, html/, tpl/) from
+.link https://github.com/siuyin/present_go_cookies-sessions
+
 * Sessions
 Sessions are maintained on the server and are set for authorized users.
 .code main.go /sS OMIT/,/sE OMIT/
